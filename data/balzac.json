@@ -1,0 +1,26 @@
+{
+  "slug": "balzac",
+  "name": "Appartement Balzac",
+  "domain": "balzac.makeitreal.cloud",
+
+  "languages": ["fr", "en", "es"],
+
+  "location": {
+    "city": "Paris",
+    "address_line": "À RENSEIGNER",
+    "gps": null
+  },
+
+  "contact": {
+    "whatsapp": "+33782178715"
+  },
+
+  "wifi": {
+    "ssid": "Livebox_F510",
+    "password": "SJFhx6MHkmLjz7N6hD"
+  },
+
+  "images": {
+    "hero": "assets/images/balzac-hero.jpg"
+  }
+}
