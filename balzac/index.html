@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Appartement Balzac – Guide voyageurs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #000;
+        color: #fff;
+      }
+
+      .hero-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Image de fond + voile sombre léger */
+      .hero-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.70)
+          ),
+          url("../assets/images/balzac-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.98;
+        transform: scale(1.02);
+      }
+
+      .hero-content {
+        position: relative;
+        text-align: center;
+        padding: 24px;
+        max-width: 720px;
+        width: 100%;
+      }
+
+      .hero-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        opacity: 0.85;
+        margin-bottom: 10px;
+      }
+
+      .hero-subtitle {
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+
+      .hero-button {
+        display: inline-block;
+        padding: 14px 42px;
+        border-radius: 999px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.9rem;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.88);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(6px);
+      }
+
+      .hero-button:hover {
+        background: rgba(0, 0, 0, 0.95);
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero-wrapper">
+      <section class="hero-content">
+        <div class="hero-title">Appartement Balzac</div>
+        <div class="hero-subtitle">Champs-&Eacute;lys&eacute;es</div>
+
+        <a href="./guide.html" class="hero-button">Entrer</a>
+      </section>
+    </main>
+  </body>
+</html>
