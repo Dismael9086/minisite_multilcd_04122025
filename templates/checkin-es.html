@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🚪 Check-in instructions – Balzac</title>
+  <title>🚪 Instrucciones de llegada – Balzac</title>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 
@@ -11,18 +11,18 @@
   <div class="container">
 
 <nav class="topbar">
-  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <a id="home-btn" class="home" href="#" aria-label="Home" data-lang="en">🏠</a>
+  <button id="burger-btn" class="burger" aria-label="Menú" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Inicio" data-lang="es">🏠</a>
 </nav>
 
 <div id="nav-panel" class="nav-panel" aria-hidden="true">
   <div class="nav-section">
-    <div class="nav-title">Pages</div>
-    <a href="/en-checkin.html" data-active="1">🚪 Check-in instructions</a><a href="/en-wifi.html">📶 WI-FI</a><a href="/en-equipements.html">🛠️ Equipment use</a><a href="/en-quartier.html">🗺️ Neighborhood & recommendations</a><a href="/en-poubelles.html">🗑️ Trash access</a><a href="/en-regles.html">📜 House rules</a><a href="/en-transport.html">🚕 Transport & vehicle parking</a><a href="/en-consigne.html">🧳 Luggage storage</a><a href="/en-checkout.html">🚪 Check-out</a>
+    <div class="nav-title">Páginas</div>
+    <a href="/es-checkin.html" data-active="1">🚪 Instrucciones de llegada</a><a href="/es-wifi.html">📶 WI-FI</a><a href="/es-equipements.html">🛠️ Uso de los equipos</a><a href="/es-quartier.html">🗺️ Barrio y recomendaciones</a><a href="/es-poubelles.html">🗑️ Acceso a la basura</a><a href="/es-regles.html">📜 Normas de la casa</a><a href="/es-transport.html">🚕 Transporte y aparcamiento</a><a href="/es-consigne.html">🧳 Consigna de equipaje</a><a href="/es-checkout.html">🚪 Check-out</a>
   </div>
   <div class="nav-section">
-    <div class="nav-title">Languages</div>
-    <a href="/fr-checkin.html">FR</a><a href="/en-checkin.html" data-active="1">EN</a><a href="/es-checkin.html">ES</a>
+    <div class="nav-title">Idiomas</div>
+    <a href="/fr-checkin.html">FR</a><a href="/en-checkin.html">EN</a><a href="/es-checkin.html" data-active="1">ES</a>
   </div>
 </div>
 
@@ -116,42 +116,42 @@
   if (home) {
     home.addEventListener('click', function (e) {
       e.preventDefault();
-      var L = home.getAttribute('data-lang') || 'en';
+      var L = home.getAttribute('data-lang') || 'es';
       window.location.href = '/' + L + '.html';
     });
   }
 })();
 </script>
 
-    <h1>🚪 Check-in instructions</h1>
+    <h1>🚪 Instrucciones de llegada</h1>
 
     <section class="card">
-      <h2>Address and access</h2>
-      <p><strong>Full address:</strong> À RENSEIGNER</p>
-      <p><strong>Floor:</strong> À RENSEIGNER</p>
-      <p><strong>Door / access code:</strong> À RENSEIGNER</p>
+      <h2>Dirección y acceso</h2>
+      <p><strong>Dirección completa:</strong> {{CHECKIN_ADDRESS}}</p>
+      <p><strong>Piso:</strong> {{CHECKIN_FLOOR}}</p>
+      <p><strong>Código de acceso:</strong> {{CHECKIN_DOOR_CODE}}</p>
     </section>
 
     <section class="card">
-      <h2>Arrival times</h2>
-      <p><strong>Standard arrival:</strong> from 15:00 to 20:00</p>
-      <p><strong>Late arrival:</strong> TO_FILL_EN_LATE</p>
+      <h2>Horario de llegada</h2>
+      <p><strong>Llegada estándar:</strong> de {{CHECKIN_ARRIVAL_FROM}} a {{CHECKIN_ARRIVAL_TO}}</p>
+      <p><strong>Llegada tardía:</strong> {{CHECKIN_LATE_POLICY_ES}}</p>
     </section>
 
     <section class="card">
-      <h2>Parking</h2>
-      <p><strong>Parking spot:</strong> À RENSEIGNER</p>
-      <p>TO_FILL_EN_CHECKIN</p>
+      <h2>Aparcamiento</h2>
+      <p><strong>Plaza de aparcamiento:</strong> {{CHECKIN_PARKING_SPOT}}</p>
+      <p>{{CHECKIN_PARKING_INSTR_ES}}</p>
     </section>
 
     <footer>Fast static site · Balzac</footer>
   </div>
 
-  <a href="https://wa.me/33782178715"
+  <a href="https://wa.me/{{WHATSAPP}}"
      class="wa-float"
      target="_blank"
      rel="noopener"
-     aria-label="WhatsApp contact">
+     aria-label="Contacto WhatsApp">
     <img src="/assets/images/wa.png" alt="WhatsApp">
   </a>
 </body>

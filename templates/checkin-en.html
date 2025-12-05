@@ -127,27 +127,27 @@
 
     <section class="card">
       <h2>Address and access</h2>
-      <p><strong>Full address:</strong> À RENSEIGNER</p>
-      <p><strong>Floor:</strong> À RENSEIGNER</p>
-      <p><strong>Door / access code:</strong> À RENSEIGNER</p>
+      <p><strong>Full address:</strong> {{CHECKIN_ADDRESS}}</p>
+      <p><strong>Floor:</strong> {{CHECKIN_FLOOR}}</p>
+      <p><strong>Door / access code:</strong> {{CHECKIN_DOOR_CODE}}</p>
     </section>
 
     <section class="card">
       <h2>Arrival times</h2>
-      <p><strong>Standard arrival:</strong> from 15:00 to 20:00</p>
-      <p><strong>Late arrival:</strong> TO_FILL_EN_LATE</p>
+      <p><strong>Standard arrival:</strong> from {{CHECKIN_ARRIVAL_FROM}} to {{CHECKIN_ARRIVAL_TO}}</p>
+      <p><strong>Late arrival:</strong> {{CHECKIN_LATE_POLICY_EN}}</p>
     </section>
 
     <section class="card">
       <h2>Parking</h2>
-      <p><strong>Parking spot:</strong> À RENSEIGNER</p>
-      <p>TO_FILL_EN_CHECKIN</p>
+      <p><strong>Parking spot:</strong> {{CHECKIN_PARKING_SPOT}}</p>
+      <p>{{CHECKIN_PARKING_INSTR_EN}}</p>
     </section>
 
     <footer>Fast static site · Balzac</footer>
   </div>
 
-  <a href="https://wa.me/33782178715"
+  <a href="https://wa.me/{{WHATSAPP}}"
      class="wa-float"
      target="_blank"
      rel="noopener"

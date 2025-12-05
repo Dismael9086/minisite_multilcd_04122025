@@ -5,52 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🚪 Instrucciones de llegada – Balzac</title>
   <link rel="stylesheet" href="/assets/style.css">
-
-  <!-- Style liens -->
-  <style>
-    a {
-      color:#0066ff;
-      font-weight:600;
-      text-decoration:underline;
-    }
-
-    /* Fix footer stable en bas */
-    body {
-      display:flex;
-      flex-direction:column;
-      min-height:100vh;
-      margin:0;
-      padding:0;
-    }
-    .container {
-      flex:1;
-      display:flex;
-      flex-direction:column;
-    }
-    footer {
-      text-align:center;
-      padding:20px 0;
-      color:#888;
-      font-size:0.85rem;
-    }
-  </style>
 </head>
 
 <body>
   <div class="container">
 
 <nav class="topbar">
-  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <a id="home-btn" class="home" href="#" aria-label="Accueil" data-lang="es">🏠</a>
+  <button id="burger-btn" class="burger" aria-label="Menú" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Inicio" data-lang="es">🏠</a>
 </nav>
 
 <div id="nav-panel" class="nav-panel" aria-hidden="true">
   <div class="nav-section">
-    <div class="nav-title">Pages</div>
-    <a href="/es-checkin.html" data-active="1">🚪 Instrucciones de llegada</a><a href="/es-wifi.html">📶 WI-FI</a><a href="/es-equipements.html">🛠️ Uso de los equipos</a><a href="/es-quartier.html">🗺️ Barrio y recomendaciones</a><a href="/es-poubelles.html">🗑️ Acceso a basuras</a><a href="/es-regles.html">📜 Reglamento interior</a><a href="/es-transport.html">🚕 Transporte y estacionamiento</a><a href="/es-consigne.html">🧳 Consigna de equipaje</a><a href="/es-checkout.html">🚪 Check-out</a>
+    <div class="nav-title">Páginas</div>
+    <a href="/es-checkin.html" data-active="1">🚪 Instrucciones de llegada</a><a href="/es-wifi.html">📶 WI-FI</a><a href="/es-equipements.html">🛠️ Uso de los equipos</a><a href="/es-quartier.html">🗺️ Barrio y recomendaciones</a><a href="/es-poubelles.html">🗑️ Acceso a la basura</a><a href="/es-regles.html">📜 Normas de la casa</a><a href="/es-transport.html">🚕 Transporte y aparcamiento</a><a href="/es-consigne.html">🧳 Consigna de equipaje</a><a href="/es-checkout.html">🚪 Check-out</a>
   </div>
   <div class="nav-section">
-    <div class="nav-title">Langues</div>
+    <div class="nav-title">Idiomas</div>
     <a href="/fr-checkin.html">FR</a><a href="/en-checkin.html">EN</a><a href="/es-checkin.html" data-active="1">ES</a>
   </div>
 </div>
@@ -133,7 +104,6 @@
   var burger = document.getElementById('burger-btn');
   var panel  = document.getElementById('nav-panel');
 
-  // Ouverture / fermeture du menu hamburger
   if (burger && panel) {
     burger.addEventListener('click', function () {
       var open = panel.classList.toggle('open');
@@ -142,132 +112,46 @@
     });
   }
 
-  // Bouton Home : renvoie toujours au sommaire de la langue
   var home = document.getElementById('home-btn');
   if (home) {
     home.addEventListener('click', function (e) {
       e.preventDefault();
-      var L = home.getAttribute('data-lang') || 'en';
+      var L = home.getAttribute('data-lang') || 'es';
       window.location.href = '/' + L + '.html';
     });
   }
 })();
 </script>
 
-
     <h1>🚪 Instrucciones de llegada</h1>
 
-    
-<h2>Paso 1: Llegada al edificio</h2>
-<img src="/assets/images/paso1.jpg" alt="Entrada del edificio" loading="lazy">
-<p>📍 <strong>Dirección:</strong> <a href="https://www.google.com/maps?q=8+rue+Balzac,+75008+Paris" target="_blank" rel="noopener">8 rue Balzac, 75008 Paris</a></p>
-<div class="callout ok"><strong>🟩 Código de la puerta: 4539</strong></div>
+    <section class="card">
+      <h2>Dirección y acceso</h2>
+      <p><strong>Dirección completa:</strong> À RENSEIGNER</p>
+      <p><strong>Piso:</strong> À RENSEIGNER</p>
+      <p><strong>Código de acceso:</strong> À RENSEIGNER</p>
+    </section>
 
-<hr>
+    <section class="card">
+      <h2>Horario de llegada</h2>
+      <p><strong>Llegada estándar:</strong> de 15:00 a 20:00</p>
+      <p><strong>Llegada tardía:</strong> POR_COMPLETAR_ES_LATE</p>
+    </section>
 
-<h2>Paso 2: Portero / digipad</h2>
-<img src="/assets/images/paso2.jpg" alt="Interfono / digipad" loading="lazy">
-<p>👉 Diríjase al portero automático (a la derecha de la entrada).<br>
-🟩 Busque « <strong>KEHRER</strong> » y pulse la campana.<br>
-⏳ Espere el mensaje <strong>« La puerta está abierta »</strong>.<br>
-🚪 Empuje la puerta para entrar.</p>
-
-<hr>
-
-<h2>Paso 3: Acceso al apartamento</h2>
-<img src="/assets/images/paso3.jpg" alt="Pasillo + cerradura Nuki" loading="lazy">
-<p>🚪 Suba al <strong>1er piso</strong> en ascensor o escaleras.<br>
-➡️ Gire a la derecha hasta la <strong>2ª puerta a la derecha</strong>.</p>
-
-<p><strong>📱 Apertura con la app Nuki</strong></p>
-<ol>
-  <li>Asegúrese de haber <strong>validado la invitación</strong> (bandeja de su app de viaje o <strong>WhatsApp</strong>).</li>
-  <li>Active el <strong>Bluetooth</strong>.</li>
-  <li>Abra <strong>Nuki</strong> y pulse <strong>« Abrir »</strong>.</li>
-  <li>Espere el pitido y empuje la puerta.</li>
-</ol>
-<div class="callout warn"><strong>🟥 Seguridad:</strong> Nuki se bloquea automáticamente tras 5 minutos y cada noche a las 22:00.</div>
-
-<h2>🔧 Solución de problemas – Nuki</h2>
-<p><strong>❗ La app muestra « No access »</strong></p>
-<ol>
-  <li>Compruebe que la <strong>invitación</strong> esté validada.</li>
-  <li>Verifique que el <strong>Bluetooth</strong> esté activado.</li>
-  <li>Acérquese a la puerta, deje que la app <strong>detecte la cerradura</strong> y pulse de nuevo <strong>« Abrir »</strong>.</li>
-</ol>
-<div class="callout warn">⚠️ La app <strong>no permite abrir antes de las 15:00</strong> y mostrará « No access » salvo acuerdo para early check-in.</div>
-<p>📱 ¿Necesita ayuda? <a href="https://wa.me/33782178715?text=Hola%2C%20no%20puedo%20abrir%20la%20cerradura%20Balzac%20(Invitaci%C3%B3n%20OK%2C%20Bluetooth%20OK)." target="_blank" rel="noopener">
-  <img src="/assets/images/wa.png" alt="WhatsApp" style="width:60px;height:60px;vertical-align:middle">
-</a></p>
-
-<hr>
-
-<h2>Paso 4: Recoger llaves y tarjeta</h2>
-<img src="/assets/images/paso4.jpg" alt="Llaves y tarjeta de acceso" loading="lazy">
-<p>🔑 Las <strong>llaves</strong> y la <strong>tarjeta de acceso</strong> están sobre el mueble de la TV.</p>
-<div class="callout warn"><strong>🟥 ATENCIÓN:</strong>
-  <ul>
-    <li>Lleve siempre las <strong>llaves</strong> (llave física).</li>
-    <li>La <strong>tarjeta</strong> abre las dos puertas de entrada.</li>
-    <li>Después del check-in, <strong>no use el portero</strong> (no abrimos a distancia).</li>
-  </ul>
-</div>
-<style>
-  .nuki-inline{
-    display:flex;
-    align-items:flex-start;
-    gap:20px;
-    margin:25px 0;
-  }
-  .nuki-inline img{
-    width:50%;               /* EXACTEMENT la moitié de la largeur */
-    height:auto;
-    max-width:50%;
-    border-radius:12px;
-    border:1px solid #eee;
-    display:block;
-    object-fit:contain;
-  }
-  .nuki-inline .nuki-text{
-    flex:1;
-    font-size:.95rem;
-    line-height:1.4;
-  }
-  @media(max-width:640px){
-    .nuki-inline{
-      flex-direction:column;
-    }
-    .nuki-inline img{
-      width:100%;
-      max-width:100%;
-    }
-  }
-</style>
-<div class="nuki-inline">
-  <div class="nuki-text">
-    <h3>🔐 Desde el interior del apartamento</h3>
-    <p><strong>Para desbloquear la cerradura:</strong><br>
-    Presione <strong>una vez</strong> el botón central.</p>
-
-    <p><strong>Para bloquear la cerradura:</strong><br>
-    Presione nuevamente el botón central<br>
-    o espere el <strong>bloqueo automático</strong> después de 5 minutos.</p>
-  </div>
-
-  <img src="/assets/images/pressnuki.jpg" alt="Botón Nuki interior" loading="lazy">
-</div>
-
-      
+    <section class="card">
+      <h2>Aparcamiento</h2>
+      <p><strong>Plaza de aparcamiento:</strong> À RENSEIGNER</p>
+      <p>POR_COMPLETAR_ES_CHECKIN</p>
+    </section>
 
     <footer>Fast static site · Balzac</footer>
   </div>
 
-  <!-- Bouton WhatsApp flottant -->
   <a href="https://wa.me/33782178715"
      class="wa-float"
      target="_blank"
      rel="noopener"
-     aria-label="Contact WhatsApp">
+     aria-label="Contacto WhatsApp">
     <img src="/assets/images/wa.png" alt="WhatsApp">
   </a>
 </body>
