@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗺️ Quartier et recommandations – Balzac</title>
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Style liens -->
+  <style>
+    a {
+      color:#0066ff;
+      font-weight:600;
+      text-decoration:underline;
+    }
+
+    /* Fix footer stable en bas */
+    body {
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      margin:0;
+      padding:0;
+    }
+    .container {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    footer {
+      text-align:center;
+      padding:20px 0;
+      color:#888;
+      font-size:0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+<nav class="topbar">
+  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Accueil" data-lang="fr">🏠</a>
+</nav>
+
+<div id="nav-panel" class="nav-panel" aria-hidden="true">
+  <div class="nav-section">
+    <div class="nav-title">Pages</div>
+    <a href="/fr-checkin.html">🚪 Instructions d’arrivée</a><a href="/fr-wifi.html">📶 WI-FI</a><a href="/fr-equipements.html">🛠️ Utilisation des équipements</a><a href="/fr-quartier.html" data-active="1">🗺️ Quartier et recommandations</a><a href="/fr-poubelles.html">🗑️ Accès poubelles</a><a href="/fr-regles.html">📜 Règlement intérieur</a><a href="/fr-transport.html">🚕 Transports et parking véhicule</a><a href="/fr-consigne.html">🧳 Consigne bagages</a><a href="/fr-checkout.html">🚪 Check-out</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Langues</div>
+    <a href="/fr-quartier.html" data-active="1">FR</a><a href="/en-quartier.html">EN</a><a href="/es-quartier.html">ES</a>
+  </div>
+</div>
+
+<style>
+  .topbar{
+    position:sticky;
+    top:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:10px 12px;
+    border:1px solid #eee;
+    border-radius:12px;
+    background:#fff;
+    z-index:10001;
+  }
+  .topbar .home{
+    text-decoration:none;
+    font-size:1.2rem;
+  }
+  .topbar .burger{
+    font-size:1.2rem;
+    line-height:1;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+    padding:6px 10px;
+    cursor:pointer;
+  }
+
+  .nav-panel{
+    position:fixed;
+    left:0;
+    right:0;
+    top:60px;
+    bottom:0;
+    background:#fff;
+    border-top:1px solid #eee;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transform:translateY(-12px);
+    opacity:0;
+    pointer-events:none;
+    transition:.18s ease;
+    z-index:10000;
+    overflow:auto;
+  }
+  .nav-panel.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .nav-section{
+    padding:12px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .nav-title{
+    font-weight:600;
+    margin:6px 0 8px 0;
+  }
+  .nav-panel a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+  }
+  .nav-panel a:hover{
+    background:#f6f6f6;
+  }
+  .nav-panel a[data-active="1"]{
+    background:#efefef;
+    font-weight:600;
+  }
+</style>
+
+<script>
+(function () {
+  var burger = document.getElementById('burger-btn');
+  var panel  = document.getElementById('nav-panel');
+
+  // Ouverture / fermeture du menu hamburger
+  if (burger && panel) {
+    burger.addEventListener('click', function () {
+      var open = panel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  }
+
+  // Bouton Home : renvoie toujours au sommaire de la langue
+  var home = document.getElementById('home-btn');
+  if (home) {
+    home.addEventListener('click', function (e) {
+      e.preventDefault();
+      var L = home.getAttribute('data-lang') || 'en';
+      window.location.href = '/' + L + '.html';
+    });
+  }
+})();
+</script>
+
+
+    <h1>🗺️ Quartier et recommandations</h1>
+
+    
+<style>
+  .quartier-intro{margin-bottom:1rem;font-size:.95rem}
+  .places-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    align-items:center;
+    margin-bottom:1rem
+  }
+  .places-filters span{
+    font-size:.9rem;
+    color:#555
+  }
+  .places-filters button{
+    border:1px solid #ddd;
+    border-radius:999px;
+    padding:.3rem .7rem;
+    background:#f8f8f8;
+    font-size:.85rem;
+    cursor:pointer
+  }
+  .places-filters button.active{
+    background:#111;
+    color:#fff;
+    border-color:#111
+  }
+  .places-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:1rem
+  }
+  .place-card{
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:12px;
+    background:#fff
+  }
+  .place-card h3{
+    margin:0 0 .3rem 0;
+    font-size:1rem
+  }
+  .place-cat{
+    margin:0 0 .4rem 0;
+    font-size:.8rem;
+    color:#666
+  }
+  .place-addr{
+    margin:0 0 .4rem 0;
+    font-size:.85rem
+  }
+  .place-desc{
+    margin:0 0 .6rem 0;
+    font-size:.85rem;
+    color:#555
+  }
+  .place-card .btn{
+    display:inline-block;
+    padding:.35rem .7rem;
+    border-radius:8px;
+    border:1px solid #ddd;
+    text-decoration:none;
+    font-size:.85rem
+  }
+  .place-card .btn:hover{
+    background:#f5f5f5
+  }
+</style>
+
+<h2>🗺️ Quartier &amp; recommandations</h2>
+<p class="quartier-intro">Voici une sélection de commerces à quelques minutes de l’appartement.</p>
+
+<div class="places-filters">
+  <span>Filtrer par type :</span>
+  <button type="button" class="active" data-cat="all">Tous</button><button type="button" data-cat="bakery">Boulangeries</button><button type="button" data-cat="brasserie">Brasseries / bistrots</button><button type="button" data-cat="restaurant">Restaurants</button><button type="button" data-cat="cafe">Cafés</button><button type="button" data-cat="pharmacy">Pharmacies</button><button type="button" data-cat="pharmacy24">Pharmacie 24/7</button>
+</div>
+
+<div class="places-list">
+  
+      <article class="place-card" data-category="bakery">
+        <h3>Maison Lucie</h3>
+        <p class="place-cat">Boulangeries</p>
+        <p class="place-addr">25 rue de Berri, 75008 Paris</p>
+        <p class="place-desc">Boulangerie de quartier, idéale pour acheter la traditionnelle baguette française et des viennoiseries à emporter.</p>
+        <a class="btn" href="https://maps.app.goo.gl/8BNXbkPKjbwhbCUa6" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="bakery">
+        <h3>Paul le Café</h3>
+        <p class="place-cat">Boulangeries</p>
+        <p class="place-addr">84 Av. des Champs-Élysées, 75008 Paris</p>
+        <p class="place-desc">Boulangerie–café sur les Champs-Élysées, parfait pour un petit-déjeuner ou une pause gourmande.</p>
+        <a class="btn" href="https://maps.app.goo.gl/sjgk6A4EtU4tkEjy8" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="brasserie">
+        <h3>Brasserie Sir Winston</h3>
+        <p class="place-cat">Brasseries / bistrots</p>
+        <p class="place-addr">5 Rue de Presbourg, 75016 Paris</p>
+        <p class="place-desc">Brasserie raffinée de style colonial, cuisine indienne et britannique, cocktails.</p>
+        <a class="btn" href="https://maps.app.goo.gl/8BQNfFUa9p3v4qNe7" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="brasserie">
+        <h3>Brasserie Le Balzac</h3>
+        <p class="place-cat">Brasseries / bistrots</p>
+        <p class="place-addr">29 Av. de Friedland, 75008 Paris</p>
+        <p class="place-desc">Brasserie décontractée avec terrasse, plats maison et petit-déjeuner. Idéale pour café, déjeuner ou verre en bas de l’appartement.</p>
+        <a class="btn" href="https://maps.app.goo.gl/hsDDYTdNfEaAsdsH7" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="brasserie">
+        <h3>Bistrot d’Arsène</h3>
+        <p class="place-cat">Brasseries / bistrots</p>
+        <p class="place-addr">10 Rue Arsène Houssaye, 75008 Paris</p>
+        <p class="place-desc">Bistrot convivial servant une cuisine française traditionnelle, en terrasse ou en salle cosy.</p>
+        <a class="btn" href="https://maps.app.goo.gl/bDLNKvmtXpVCpWwJ9" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="restaurant">
+        <h3>Les Cocottes Arc de Triomphe</h3>
+        <p class="place-cat">Restaurants</p>
+        <p class="place-addr">14 Rue Beaujon, 75008 Paris</p>
+        <p class="place-desc">Restaurant chic au décor contemporain, spécialités françaises servies en cocottes.</p>
+        <a class="btn" href="https://maps.app.goo.gl/uCVCUpkWYjqv8q5n9" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="restaurant">
+        <h3>Le Sens Unique</h3>
+        <p class="place-cat">Restaurants</p>
+        <p class="place-addr">47 Rue de Ponthieu, 75008 Paris</p>
+        <p class="place-desc">Restaurant chic avec bar à vin, plats haut de gamme dans un cadre luxueux en briques apparentes.</p>
+        <a class="btn" href="https://maps.app.goo.gl/TSf9XzAqiLcca2Mm6" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="restaurant">
+        <h3>Galanga par Monsieur George</h3>
+        <p class="place-cat">Restaurants</p>
+        <p class="place-addr">17 Rue Washington, 75008 Paris</p>
+        <p class="place-desc">Restaurant gastronomique à l’ambiance chic, avec plats signatures.</p>
+        <a class="btn" href="https://maps.app.goo.gl/ojf6CGFKuBgQSkkV9" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="cafe">
+        <h3>Le Café de Paris Friedland</h3>
+        <p class="place-cat">Cafés</p>
+        <p class="place-addr">45 Av. de Friedland, 75008 Paris</p>
+        <p class="place-desc">Café avec terrasse vue Arc de Triomphe, typiquement parisien pour un café ou un verre.</p>
+        <a class="btn" href="https://maps.app.goo.gl/Cid2xJCxsYwXPEoX6" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="cafe">
+        <h3>Terre d’Azur – Arc de Triomphe</h3>
+        <p class="place-cat">Cafés</p>
+        <p class="place-addr">10 Av. de Wagram, 75008 Paris</p>
+        <p class="place-desc">Coffee shop / brunch à quelques minutes à pied, très pratique pour le petit-déjeuner.</p>
+        <a class="btn" href="https://maps.app.goo.gl/PTKqmgroKsUsD9rSA" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="pharmacy">
+        <h3>Pharmacie Friedland</h3>
+        <p class="place-cat">Pharmacies</p>
+        <p class="place-addr">29 Av. de Friedland, 75008 Paris</p>
+        <p class="place-desc">Pharmacie de quartier, ouverte jusqu’à 20h00 environ.</p>
+        <a class="btn" href="https://maps.app.goo.gl/tLqUNAYDaVKjsM3w8" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+      <article class="place-card" data-category="pharmacy24">
+        <h3>Pharmacie de la Porte Maillot (24/7)</h3>
+        <p class="place-cat">Pharmacie 24/7</p>
+        <p class="place-addr">68 Av. de la Grande Armée, 75017 Paris</p>
+        <p class="place-desc">Pharmacie de garde ouverte 24h/24 et 7j/7.</p>
+        <a class="btn" href="https://maps.app.goo.gl/KKQgY8swZQGZAPd88" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps
+        </a>
+      </article>
+      
+</div>
+
+<script>
+(function(){
+  const filters = document.querySelectorAll('.places-filters button[data-cat]');
+  const cards = document.querySelectorAll('.place-card');
+  if (!filters.length || !cards.length) return;
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', function(){
+      const cat = this.getAttribute('data-cat');
+      filters.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      cards.forEach(card => {
+        const c = card.getAttribute('data-category');
+        card.style.display = (cat === 'all' || c === cat) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+    
+
+    <footer>Fast static site · Balzac</footer>
+  </div>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/33782178715"
+     class="wa-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contact WhatsApp">
+    <img src="/assets/images/wa.png" alt="WhatsApp">
+  </a>
+</body>
+</html>

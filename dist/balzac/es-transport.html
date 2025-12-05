@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚕 Transporte y estacionamiento – Balzac</title>
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Style liens -->
+  <style>
+    a {
+      color:#0066ff;
+      font-weight:600;
+      text-decoration:underline;
+    }
+
+    /* Fix footer stable en bas */
+    body {
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      margin:0;
+      padding:0;
+    }
+    .container {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    footer {
+      text-align:center;
+      padding:20px 0;
+      color:#888;
+      font-size:0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+<nav class="topbar">
+  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Accueil" data-lang="es">🏠</a>
+</nav>
+
+<div id="nav-panel" class="nav-panel" aria-hidden="true">
+  <div class="nav-section">
+    <div class="nav-title">Pages</div>
+    <a href="/es-checkin.html">🚪 Instrucciones de llegada</a><a href="/es-wifi.html">📶 WI-FI</a><a href="/es-equipements.html">🛠️ Uso de los equipos</a><a href="/es-quartier.html">🗺️ Barrio y recomendaciones</a><a href="/es-poubelles.html">🗑️ Acceso a basuras</a><a href="/es-regles.html">📜 Reglamento interior</a><a href="/es-transport.html" data-active="1">🚕 Transporte y estacionamiento</a><a href="/es-consigne.html">🧳 Consigna de equipaje</a><a href="/es-checkout.html">🚪 Check-out</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Langues</div>
+    <a href="/fr-transport.html">FR</a><a href="/en-transport.html">EN</a><a href="/es-transport.html" data-active="1">ES</a>
+  </div>
+</div>
+
+<style>
+  .topbar{
+    position:sticky;
+    top:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:10px 12px;
+    border:1px solid #eee;
+    border-radius:12px;
+    background:#fff;
+    z-index:10001;
+  }
+  .topbar .home{
+    text-decoration:none;
+    font-size:1.2rem;
+  }
+  .topbar .burger{
+    font-size:1.2rem;
+    line-height:1;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+    padding:6px 10px;
+    cursor:pointer;
+  }
+
+  .nav-panel{
+    position:fixed;
+    left:0;
+    right:0;
+    top:60px;
+    bottom:0;
+    background:#fff;
+    border-top:1px solid #eee;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transform:translateY(-12px);
+    opacity:0;
+    pointer-events:none;
+    transition:.18s ease;
+    z-index:10000;
+    overflow:auto;
+  }
+  .nav-panel.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .nav-section{
+    padding:12px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .nav-title{
+    font-weight:600;
+    margin:6px 0 8px 0;
+  }
+  .nav-panel a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+  }
+  .nav-panel a:hover{
+    background:#f6f6f6;
+  }
+  .nav-panel a[data-active="1"]{
+    background:#efefef;
+    font-weight:600;
+  }
+</style>
+
+<script>
+(function () {
+  var burger = document.getElementById('burger-btn');
+  var panel  = document.getElementById('nav-panel');
+
+  // Ouverture / fermeture du menu hamburger
+  if (burger && panel) {
+    burger.addEventListener('click', function () {
+      var open = panel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  }
+
+  // Bouton Home : renvoie toujours au sommaire de la langue
+  var home = document.getElementById('home-btn');
+  if (home) {
+    home.addEventListener('click', function (e) {
+      e.preventDefault();
+      var L = home.getAttribute('data-lang') || 'en';
+      window.location.href = '/' + L + '.html';
+    });
+  }
+})();
+</script>
+
+
+    <h1>🚕 Transporte y estacionamiento</h1>
+
+    
+<h2>📍 Dirección del apartamento</h2>
+<p><strong>8 rue Balzac, 75008 París</strong></p>
+
+<p>🚆 <strong>El tren, el metro y las bicicletas</strong> son las formas más eficientes de moverse por París.</p>
+<p>🎫 Billetes y pases disponibles en estaciones o mediante la app IDF Mobilités disponible para IOS y Android.</p>
+<p>➡️ Para encontrar el pase de transporte mas indicado para tus viaje:
+<a href="https://www.ratp.fr/en/titres-et-tarifs" target="_blank" rel="noopener">haga clic aquí</a>.
+</p>
+
+<hr>
+
+<h2>✈️ Itinerario desde el Aeropuerto Charles de Gaulle (CDG)</h2>
+<p><a href="https://maps.app.goo.gl/zLPQzzZf4rV6jHKq8" target="_blank" rel="noopener">🗺️ Itinerarios Google Maps</a></p>
+
+<ul>
+  <li>⏱️ <strong>Duración:</strong> ~50 min</li>
+  <li>💶 <strong>Precio:</strong> 13 €</li>
+  <li>🚉 <strong>Ruta:</strong> RER B → Metro línea 1</li>
+</ul>
+
+<hr>
+
+<h2>✈️ Itinerario desde el Aeropuerto de Orly (ORY)</h2>
+<p><a href="https://maps.app.goo.gl/JNmEC3hF4BNmr9RT8" target="_blank" rel="noopener">🗺️ Itinerario Google Maps</a></p>
+
+<ul>
+  <li>⏱️ <strong>Duración:</strong> ~45 min</li>
+  <li>💶 <strong>Precio:</strong> 13 €</li>
+  <li>🚉 <strong>Ruta:</strong> Orlyval → RER B → Metro línea 1</li>
+</ul>
+
+<hr>
+
+<h2>🚕 Taxis oficiales</h2>
+<p>Diríjase a la <strong>parada oficial de taxis</strong> dentro de los terminales.</p>
+<p>❗ No confíe en personas que se acerquen a ofrecer transporte: <strong>no</strong> son taxis autorizados.</p>
+
+<h3>✈️ Desde Charles de Gaulle (CDG)</h3>
+<ul>
+  <li>⏱️ <strong>Duración:</strong> 45 min a 1h30</li>
+  <li>💶 <strong>Precio:</strong> 60–80 €</li>
+</ul>
+
+<h3>✈️ Desde Orly (ORY)</h3>
+<ul>
+  <li>⏱️ <strong>Duración:</strong> 45 min a 1h30</li>
+  <li>💶 <strong>Precio:</strong> 60–80 €</li>
+</ul>
+
+<hr>
+
+<h2>🅿️ Estacionamiento / Parking</h2>
+<p>Podrá aparcar fácilmente en las calles cercanas.</p>
+<p>El apartamento no dispone de aparcamiento privado, pero hay plazas públicas alrededor del edificio.</p>
+
+<ul>
+  <li>📅 <strong>Días laborables:</strong> de pago 8h–19h</li>
+  <li>🌙 <strong>Gratis:</strong> 19h–8h</li>
+  <li>🧭 <strong>Fines de semana:</strong> gratis</li>
+</ul>
+
+<p><strong>¿Cómo pagar?</strong></p>
+<ul>
+  <li>💳 En parquímetros con tarjeta</li>
+  <li>📱 Con la app Paybyphone:
+    <br>Android: <a href="https://play.google.com/store/apps/details?id=com.paybyphone&hl=fr&pli=1" target="_blank" rel="noopener">Paybyphone Android</a>
+    <br>iOS: <a href="https://apps.apple.com/app/paybyphone-parking/id448474183" target="_blank" rel="noopener">Paybyphone iOS</a>
+  </li>
+</ul>
+
+<p>🚗 <strong>Parking subterráneo a 2 minutos, abierto 24/7:</strong></p>
+<p><a href="https://maps.app.goo.gl/8qdNECAkPaJmj19d8" target="_blank" rel="noopener">Parking Indigo Paris Friedland</a></p>
+      
+
+    <footer>Fast static site · Balzac</footer>
+  </div>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/33782178715"
+     class="wa-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contact WhatsApp">
+    <img src="/assets/images/wa.png" alt="WhatsApp">
+  </a>
+</body>
+</html>
