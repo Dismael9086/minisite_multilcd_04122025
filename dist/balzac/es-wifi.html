@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📶 WI-FI – Balzac</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+<nav class="topbar">
+  <button id="burger-btn" class="burger" aria-label="Menú" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Inicio" data-lang="es">🏠</a>
+</nav>
+
+<div id="nav-panel" class="nav-panel" aria-hidden="true">
+  <div class="nav-section">
+    <div class="nav-title">Páginas</div>
+    <a href="/es-checkin.html">🚪 Instrucciones de llegada</a><a href="/es-wifi.html" data-active="1">📶 WI-FI</a><a href="/es-equipements.html">🛠️ Uso de los equipos</a><a href="/es-quartier.html">🗺️ Barrio y recomendaciones</a><a href="/es-poubelles.html">🗑️ Acceso a la basura</a><a href="/es-regles.html">📜 Normas de la casa</a><a href="/es-transport.html">🚕 Transporte y aparcamiento</a><a href="/es-consigne.html">🧳 Consigna de equipaje</a><a href="/es-checkout.html">🚪 Check-out</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Idiomas</div>
+    <a href="/fr-wifi.html">FR</a><a href="/en-wifi.html">EN</a><a href="/es-wifi.html" data-active="1">ES</a>
+  </div>
+</div>
+
+<style>
+  .topbar{
+    position:sticky;
+    top:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:10px 12px;
+    border:1px solid #eee;
+    border-radius:12px;
+    background:#fff;
+    z-index:10001;
+  }
+  .topbar .home{
+    text-decoration:none;
+    font-size:1.2rem;
+  }
+  .topbar .burger{
+    font-size:1.2rem;
+    line-height:1;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+    padding:6px 10px;
+    cursor:pointer;
+  }
+
+  .nav-panel{
+    position:fixed;
+    left:0;
+    right:0;
+    top:60px;
+    bottom:0;
+    background:#fff;
+    border-top:1px solid #eee;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transform:translateY(-12px);
+    opacity:0;
+    pointer-events:none;
+    transition:.18s ease;
+    z-index:10000;
+    overflow:auto;
+  }
+  .nav-panel.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .nav-section{
+    padding:12px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .nav-title{
+    font-weight:600;
+    margin:6px 0 8px 0;
+  }
+  .nav-panel a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+  }
+  .nav-panel a:hover{
+    background:#f6f6f6;
+  }
+  .nav-panel a[data-active="1"]{
+    background:#efefef;
+    font-weight:600;
+  }
+</style>
+
+<script>
+(function () {
+  var burger = document.getElementById('burger-btn');
+  var panel  = document.getElementById('nav-panel');
+
+  if (burger && panel) {
+    burger.addEventListener('click', function () {
+      var open = panel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  }
+
+  var home = document.getElementById('home-btn');
+  if (home) {
+    home.addEventListener('click', function (e) {
+      e.preventDefault();
+      var L = home.getAttribute('data-lang') || 'es';
+      window.location.href = '/' + L + '.html';
+    });
+  }
+})();
+</script>
+
+
+    <h1>📶 WI-FI</h1>
+
+    
+<section id="wifi" class="wifi">
+  <p><strong>Nombre de la red (SSID):</strong> <span id="ssid">Livebox_F510</span></p>
+  <p><strong>Contraseña:</strong> <span id="pwd">SJFhx6MHkmLjz7N6hD</span></p>
+  <button
+    style="padding:10px 14px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;"
+    onclick="navigator.clipboard.writeText('SJFhx6MHkmLjz7N6hD')
+      .then(()=>{this.textContent='Copiado ✓'; setTimeout(()=>{this.textContent='Copiar la contraseña'},1500);});">
+    Copiar la contraseña
+  </button>
+</section>
+
+    <footer>Fast static site · Balzac</footer>
+  </div>
+
+  <a href="https://wa.me/33782178715"
+     class="wa-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contacto WhatsApp">
+    <img src="/assets/images/wa.png" alt="WhatsApp">
+  </a>
+</body>
+</html>
