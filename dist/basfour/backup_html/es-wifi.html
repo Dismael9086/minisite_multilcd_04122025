@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📶 Wi-Fi – Balzac</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="/index.html">🏠 Inicio</a>
+      <a href="/es-checkin.html">🚪 Check-in – Guía visual</a>
+      <a href="/es-wifi.html">📶 Wi-Fi</a>
+      <a href="/es-equipements.html">🧰 Equipamiento</a>
+      <a href="/es-poubelles.html">🗑️ Basuras y reciclaje</a>
+      <a href="/es-regles.html">📜 Reglas de la casa</a>
+      <a href="/es-quartier.html">🗺️ Barrio &amp; consejos</a>
+      <a href="/es-checkout.html">🚪 Check-out</a>
+      <a href="/fr-wifi.html">FR</a>
+      <a href="/en-wifi.html">EN</a>
+      <a href="/es-wifi.html">ES</a>
+    </nav>
+
+    <h1>📶 Wi-Fi</h1>
+
+    
+<section id="wifi" class="wifi">
+
+  <p><strong>Nombre de la red (SSID) :</strong> <span id="ssid">Livebox_F510</span></p>
+  <p><strong>Contraseña :</strong> <span id="pwd">SJFhx6MHkmLjz7N6hD</span></p>
+  <button
+    style="padding:10px 14px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;"
+    onclick="navigator.clipboard.writeText('SJFhx6MHkmLjz7N6hD')
+      .then(()=>{this.textContent='Copiado ✓'; setTimeout(()=>{this.textContent='Copiar la contraseña'},1500);});">
+    Copiar la contraseña
+  </button>
+</section>
+
+    <footer>Fast static site · Balzac</footer>
+  </div>
+</body>
+</html>

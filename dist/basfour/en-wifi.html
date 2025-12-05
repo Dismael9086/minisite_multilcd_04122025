@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📶 WI-FI – Balzac</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+<nav class="topbar">
+  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Home" data-lang="en">🏠</a>
+</nav>
+
+<div id="nav-panel" class="nav-panel" aria-hidden="true">
+  <div class="nav-section">
+    <div class="nav-title">Pages</div>
+    <a href="/en-checkin.html">🚪 Check-in instructions</a><a href="/en-wifi.html" data-active="1">📶 WI-FI</a><a href="/en-equipements.html">🛠️ Equipment use</a><a href="/en-quartier.html">🗺️ Neighborhood & recommendations</a><a href="/en-poubelles.html">🗑️ Trash access</a><a href="/en-regles.html">📜 House rules</a><a href="/en-transport.html">🚕 Transport & vehicle parking</a><a href="/en-consigne.html">🧳 Luggage storage</a><a href="/en-checkout.html">🚪 Check-out</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Languages</div>
+    <a href="/fr-wifi.html">FR</a><a href="/en-wifi.html" data-active="1">EN</a><a href="/es-wifi.html">ES</a>
+  </div>
+</div>
+
+<style>
+  .topbar{
+    position:sticky;
+    top:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:10px 12px;
+    border:1px solid #eee;
+    border-radius:12px;
+    background:#fff;
+    z-index:10001;
+  }
+  .topbar .home{
+    text-decoration:none;
+    font-size:1.2rem;
+  }
+  .topbar .burger{
+    font-size:1.2rem;
+    line-height:1;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+    padding:6px 10px;
+    cursor:pointer;
+  }
+
+  .nav-panel{
+    position:fixed;
+    left:0;
+    right:0;
+    top:60px;
+    bottom:0;
+    background:#fff;
+    border-top:1px solid #eee;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transform:translateY(-12px);
+    opacity:0;
+    pointer-events:none;
+    transition:.18s ease;
+    z-index:10000;
+    overflow:auto;
+  }
+  .nav-panel.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .nav-section{
+    padding:12px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .nav-title{
+    font-weight:600;
+    margin:6px 0 8px 0;
+  }
+  .nav-panel a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+  }
+  .nav-panel a:hover{
+    background:#f6f6f6;
+  }
+  .nav-panel a[data-active="1"]{
+    background:#efefef;
+    font-weight:600;
+  }
+</style>
+
+<script>
+(function () {
+  var burger = document.getElementById('burger-btn');
+  var panel  = document.getElementById('nav-panel');
+
+  if (burger && panel) {
+    burger.addEventListener('click', function () {
+      var open = panel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  }
+
+  var home = document.getElementById('home-btn');
+  if (home) {
+    home.addEventListener('click', function (e) {
+      e.preventDefault();
+      var L = home.getAttribute('data-lang') || 'en';
+      window.location.href = '/' + L + '.html';
+    });
+  }
+})();
+</script>
+
+
+    <h1>📶 WI-FI</h1>
+
+    
+<section id="wifi" class="wifi">
+  <p><strong>Network name (SSID):</strong> <span id="ssid">À RENSEIGNER_WIFI_SSID</span></p>
+  <p><strong>Password:</strong> <span id="pwd">À RENSEIGNER_WIFI_PASSWORD</span></p>
+  <button
+    style="padding:10px 14px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;"
+    onclick="navigator.clipboard.writeText('À RENSEIGNER_WIFI_PASSWORD')
+      .then(()=>{this.textContent='Copied ✓'; setTimeout(()=>{this.textContent='Copy password'},1500);});">
+    Copy password
+  </button>
+</section>
+
+    <footer>Fast static site · Balzac</footer>
+  </div>
+
+  <a href="https://wa.me/33782178715"
+     class="wa-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="WhatsApp contact">
+    <img src="/assets/images/wa.png" alt="WhatsApp">
+  </a>
+</body>
+</html>

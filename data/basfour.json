@@ -1,0 +1,124 @@
+{
+  "slug": "basfour",
+  "name": "Appartement Basfour",
+  "domain": "basfour.makeitreal.cloud",
+
+  "languages": ["fr", "en", "es"],
+
+  "location": {
+    "city": "À RENSEIGNER",
+    "address_line": "À RENSEIGNER",
+    "gps": null
+  },
+
+  "contact": {
+    "whatsapp": "+33782178715",
+    "phone": null,
+    "email": null
+  },
+
+  "wifi": {
+    "ssid": "À RENSEIGNER_WIFI_SSID",
+    "password": "À RENSEIGNER_WIFI_PASSWORD"
+  },
+
+  "images": {
+    "hero": "assets/images/basfour-hero.jpg",
+    "gallery": []
+  },
+
+  "checkin": {
+    "address": "À RENSEIGNER",
+    "door_code": "À RENSEIGNER",
+    "building_code": null,
+    "floor": "À RENSEIGNER",
+    "parking_spot": "À RENSEIGNER",
+    "parking_instructions": {
+      "fr": "À RENSEIGNER_FR_CHECKIN_PARKING",
+      "en": "TO_FILL_EN_CHECKIN_PARKING",
+      "es": "POR_COMPLETAR_ES_CHECKIN_PARKING"
+    },
+    "arrival_window": {
+      "from": "15:00",
+      "to": "20:00"
+    },
+    "late_checkin_policy": {
+      "fr": "À RENSEIGNER_FR_LATE",
+      "en": "TO_FILL_EN_LATE",
+      "es": "POR_COMPLETAR_ES_LATE"
+    }
+  },
+
+  "checkout": {
+    "time": "11:00",
+    "instructions": {
+      "fr": "À RENSEIGNER_FR_CHECKOUT",
+      "en": "TO_FILL_EN_CHECKOUT",
+      "es": "POR_COMPLETAR_ES_CHECKOUT"
+    }
+  },
+
+  "trash": {
+    "location_description": {
+      "fr": "À RENSEIGNER_FR_POUBELLES",
+      "en": "TO_FILL_EN_TRASH",
+      "es": "POR_COMPLETAR_ES_TRASH"
+    },
+    "schedule_notes": {
+      "fr": "À RENSEIGNER_FR_HORAIRES_POUBELLES",
+      "en": "TO_FILL_EN_TRASH_SCHEDULE",
+      "es": "POR_COMPLETAR_ES_TRASH_HORARIO"
+    }
+  },
+
+  "rules": {
+    "quiet_hours": "22:00-08:00",
+    "no_party": true,
+    "no_smoking": true,
+    "pets_allowed": false,
+    "full_text": {
+      "fr": "À RENSEIGNER_FR_REGLES",
+      "en": "TO_FILL_EN_RULES",
+      "es": "POR_COMPLETAR_ES_REGLAS"
+    }
+  },
+
+  "equipment": {
+    "sections": []
+  },
+
+  "neighborhood": {
+    "intro": {
+      "fr": "À RENSEIGNER_FR_QUARTIER_INTRO",
+      "en": "TO_FILL_EN_NEIGHBORHOOD_INTRO",
+      "es": "POR_COMPLETAR_ES_BARRIO_INTRO"
+    },
+    "sections": []
+  },
+
+  "transport": {
+    "summary": {
+      "fr": "À RENSEIGNER_FR_TRANSPORT",
+      "en": "TO_FILL_EN_TRANSPORT",
+      "es": "POR_COMPLETAR_ES_TRANSPORTE"
+    },
+    "parking": {
+      "fr": "À RENSEIGNER_FR_PARKING",
+      "en": "TO_FILL_EN_PARKING",
+      "es": "POR_COMPLETAR_ES_PARKING"
+    }
+  },
+
+  "luggage": {
+    "internal_storage": {
+      "fr": "À RENSEIGNER_FR_CONSIGNE",
+      "en": "TO_FILL_EN_LUGGAGE",
+      "es": "POR_COMPLETAR_ES_CONSIGNA"
+    },
+    "external_services": {
+      "fr": "À RENSEIGNER_FR_CONSIGNE_EXT",
+      "en": "TO_FILL_EN_LUGGAGE_EXT",
+      "es": "POR_COMPLETAR_ES_CONSIGNA_EXT"
+    }
+  }
+}

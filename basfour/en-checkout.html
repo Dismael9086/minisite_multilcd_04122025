@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚪 Check-out – Balzac</title>
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Style liens -->
+  <style>
+    a {
+      color:#0066ff;
+      font-weight:600;
+      text-decoration:underline;
+    }
+
+    /* Fix footer stable en bas */
+    body {
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      margin:0;
+      padding:0;
+    }
+    .container {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    footer {
+      text-align:center;
+      padding:20px 0;
+      color:#888;
+      font-size:0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+<nav class="topbar">
+  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Accueil" data-lang="en">🏠</a>
+</nav>
+
+<div id="nav-panel" class="nav-panel" aria-hidden="true">
+  <div class="nav-section">
+    <div class="nav-title">Pages</div>
+    <a href="/en-checkin.html">🚪 Check-in instructions</a><a href="/en-wifi.html">📶 WI-FI</a><a href="/en-equipements.html">🛠️ How to use the equipment</a><a href="/en-quartier.html">🗺️ Neighborhood &amp; recommendations</a><a href="/en-poubelles.html">🗑️ Waste disposal</a><a href="/en-regles.html">📜 House rules</a><a href="/en-transport.html">🚕 Transportation &amp; vehicle parking</a><a href="/en-consigne.html">🧳 Luggage storage</a><a href="/en-checkout.html" data-active="1">🚪 Check-out</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-title">Langues</div>
+    <a href="/fr-checkout.html">FR</a><a href="/en-checkout.html" data-active="1">EN</a><a href="/es-checkout.html">ES</a>
+  </div>
+</div>
+
+<style>
+  .topbar{
+    position:sticky;
+    top:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:10px 12px;
+    border:1px solid #eee;
+    border-radius:12px;
+    background:#fff;
+    z-index:10001;
+  }
+  .topbar .home{
+    text-decoration:none;
+    font-size:1.2rem;
+  }
+  .topbar .burger{
+    font-size:1.2rem;
+    line-height:1;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+    padding:6px 10px;
+    cursor:pointer;
+  }
+
+  .nav-panel{
+    position:fixed;
+    left:0;
+    right:0;
+    top:60px;
+    bottom:0;
+    background:#fff;
+    border-top:1px solid #eee;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transform:translateY(-12px);
+    opacity:0;
+    pointer-events:none;
+    transition:.18s ease;
+    z-index:10000;
+    overflow:auto;
+  }
+  .nav-panel.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .nav-section{
+    padding:12px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .nav-title{
+    font-weight:600;
+    margin:6px 0 8px 0;
+  }
+  .nav-panel a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+  }
+  .nav-panel a:hover{
+    background:#f6f6f6;
+  }
+  .nav-panel a[data-active="1"]{
+    background:#efefef;
+    font-weight:600;
+  }
+</style>
+
+<script>
+(function () {
+  var burger = document.getElementById('burger-btn');
+  var panel  = document.getElementById('nav-panel');
+
+  // Ouverture / fermeture du menu hamburger
+  if (burger && panel) {
+    burger.addEventListener('click', function () {
+      var open = panel.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  }
+
+  // Bouton Home : renvoie toujours au sommaire de la langue
+  var home = document.getElementById('home-btn');
+  if (home) {
+    home.addEventListener('click', function (e) {
+      e.preventDefault();
+      var L = home.getAttribute('data-lang') || 'en';
+      window.location.href = '/' + L + '.html';
+    });
+  }
+})();
+</script>
+
+
+    <h1>🚪 Check-out</h1>
+
+    
+<style>
+  .rules-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:16px;}
+  @media(min-width:640px){.rules-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  .rule-card{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid #eee;background:#fafafa;}
+  .rule-icon{font-size:1.3rem;margin-top:2px;}
+  .rule-text{font-size:0.95rem;line-height:1.4;}
+</style>
+
+<p>Check-out is scheduled at <strong>11:00 am</strong>. Please follow the steps below before leaving.</p>
+
+<div class="rules-grid">
+  <div class="rule-card">
+    <div class="rule-icon">💡</div>
+    <div class="rule-text">Please switch off all lights.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-icon">❄️</div>
+    <div class="rule-text">Turn off the air conditioning and heating.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-icon">🪟</div>
+    <div class="rule-text">Make sure <strong>no windows are left open</strong>.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-icon">🔑</div>
+    <div class="rule-text">Leave the <strong>keys</strong> and the <strong>building badge</strong> on the TV stand, where you found them on arrival.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-icon">🎒</div>
+    <div class="rule-text">Check that you have not forgotten any <strong>personal belongings</strong> (drawers, bathroom, closets, etc.).</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-icon">🍽️</div>
+    <div class="rule-text">Please wash your dishes and leave the kitchen reasonably tidy.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-icon">🗑️</div>
+    <div class="rule-text">Please take out the trash according to the instructions in the “Waste disposal” section.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-icon">📱</div>
+    <div class="rule-text">If possible, send us a short WhatsApp message to confirm that you have checked out.</div>
+  </div>
+    <div class="rule-card">
+    <div class="rule-icon">🚪</div>
+    <div class="rule-text">
+      Leaving the apartment:<br>
+      <strong>Unlock the door</strong> by pressing the central button <strong>once</strong>,<br>
+      close the door behind you.<br>
+      The lock will <strong>automatically lock</strong>.
+    </div>
+  </div>
+<div class="rule-card">
+  <div class="rule-icon">📱</div>
+  <div class="rule-text">
+  Confirm that you have checked out by cliquing the link below.
+    <div style="margin-top:6px;">
+      <a 
+        href="https://wa.me/33782178715?text=Hi%2C%20I%20have%20just%20left%20the%20apartment%20and%20everything%20is%20fine%20!"
+        style="text-decoration:none; font-weight:600; color:#007AFF;"
+      >
+        📩 Send a message
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+    <footer>Fast static site · Balzac</footer>
+  </div>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/33782178715"
+     class="wa-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contact WhatsApp">
+    <img src="/assets/images/wa.png" alt="WhatsApp">
+  </a>
+</body>
+</html>
