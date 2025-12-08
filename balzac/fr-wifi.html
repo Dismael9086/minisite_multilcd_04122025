@@ -128,11 +128,11 @@
 
     
 <section id="wifi" class="wifi">
-  <p><strong>Nom du réseau (SSID) :</strong> <span id="ssid">Livebox_F510</span></p>
-  <p><strong>Mot de passe :</strong> <span id="pwd">SJFhx6MHkmLjz7N6hD</span></p>
+  <p><strong>Nom du réseau (SSID) :</strong> <span id="ssid">[[wifi.ssid]]</span></p>
+  <p><strong>Mot de passe :</strong> <span id="pwd">[[wifi.password]]</span></p>
   <button
     style="padding:10px 14px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;"
-    onclick="navigator.clipboard.writeText('SJFhx6MHkmLjz7N6hD')
+    onclick="navigator.clipboard.writeText('[[wifi.password]]')
       .then(()=>{this.textContent='Copié ✓'; setTimeout(()=>{this.textContent='Copier le mot de passe'},1500);});">
     Copier le mot de passe
   </button>
@@ -141,7 +141,7 @@
     <footer>Fast static site · Balzac</footer>
   </div>
 
-  <a href="https://wa.me/33782178715"
+  <a href="https://wa.me/[[contact.whatsapp]]"
      class="wa-float"
      target="_blank"
      rel="noopener"

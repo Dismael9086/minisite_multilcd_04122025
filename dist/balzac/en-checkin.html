@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🚪 Check-in instructions – Balzac</title>
   <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Style liens -->
+  <style>
+    a {
+      color:#0066ff;
+      font-weight:600;
+      text-decoration:underline;
+    }
+
+    /* Fix footer stable en bas */
+    body {
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      margin:0;
+      padding:0;
+    }
+    .container {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    footer {
+      text-align:center;
+      padding:20px 0;
+      color:#888;
+      font-size:0.85rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -12,16 +41,16 @@
 
 <nav class="topbar">
   <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <a id="home-btn" class="home" href="#" aria-label="Home" data-lang="en">🏠</a>
+  <a id="home-btn" class="home" href="#" aria-label="Accueil" data-lang="en">🏠</a>
 </nav>
 
 <div id="nav-panel" class="nav-panel" aria-hidden="true">
   <div class="nav-section">
     <div class="nav-title">Pages</div>
-    <a href="/en-checkin.html" data-active="1">🚪 Check-in instructions</a><a href="/en-wifi.html">📶 WI-FI</a><a href="/en-equipements.html">🛠️ Equipment use</a><a href="/en-quartier.html">🗺️ Neighborhood & recommendations</a><a href="/en-poubelles.html">🗑️ Trash access</a><a href="/en-regles.html">📜 House rules</a><a href="/en-transport.html">🚕 Transport & vehicle parking</a><a href="/en-consigne.html">🧳 Luggage storage</a><a href="/en-checkout.html">🚪 Check-out</a>
+    <a href="/en-checkin.html" data-active="1">🚪 Check-in instructions</a><a href="/en-wifi.html">📶 WI-FI</a><a href="/en-equipements.html">🛠️ How to use the equipment</a><a href="/en-quartier.html">🗺️ Neighborhood &amp; recommendations</a><a href="/en-poubelles.html">🗑️ Waste disposal</a><a href="/en-regles.html">📜 House rules</a><a href="/en-transport.html">🚕 Transportation &amp; vehicle parking</a><a href="/en-consigne.html">🧳 Luggage storage</a><a href="/en-checkout.html">🚪 Check-out</a>
   </div>
   <div class="nav-section">
-    <div class="nav-title">Languages</div>
+    <div class="nav-title">Langues</div>
     <a href="/fr-checkin.html">FR</a><a href="/en-checkin.html" data-active="1">EN</a><a href="/es-checkin.html">ES</a>
   </div>
 </div>
@@ -104,6 +133,7 @@
   var burger = document.getElementById('burger-btn');
   var panel  = document.getElementById('nav-panel');
 
+  // Ouverture / fermeture du menu hamburger
   if (burger && panel) {
     burger.addEventListener('click', function () {
       var open = panel.classList.toggle('open');
@@ -112,6 +142,7 @@
     });
   }
 
+  // Bouton Home : renvoie toujours au sommaire de la langue
   var home = document.getElementById('home-btn');
   if (home) {
     home.addEventListener('click', function (e) {
@@ -123,35 +154,120 @@
 })();
 </script>
 
+
     <h1>🚪 Check-in instructions</h1>
 
-    <section class="card">
-      <h2>Address and access</h2>
-      <p><strong>Full address:</strong> À RENSEIGNER</p>
-      <p><strong>Floor:</strong> À RENSEIGNER</p>
-      <p><strong>Door / access code:</strong> À RENSEIGNER</p>
-    </section>
+    
+<h2>Step 1: Arrival at the building</h2>
+<img src="/assets/images/paso1.jpg" alt="Building entrance" loading="lazy">
+<p>📍 <strong>Address:</strong> <a href="https://www.google.com/maps?q=8+rue+Balzac,+75008+Paris" target="_blank" rel="noopener">8 rue Balzac, 75008 Paris</a></p>
+<div class="callout ok"><strong>🟩 Door code: 4539</strong></div>
 
-    <section class="card">
-      <h2>Arrival times</h2>
-      <p><strong>Standard arrival:</strong> from 15:00 to 20:00</p>
-      <p><strong>Late arrival:</strong> TO_FILL_EN_LATE</p>
-    </section>
+<hr>
 
-    <section class="card">
-      <h2>Parking</h2>
-      <p><strong>Parking spot:</strong> À RENSEIGNER</p>
-      <p>TO_FILL_EN_CHECKIN</p>
-    </section>
+<h2>Step 2: Intercom / digipad</h2>
+<img src="/assets/images/paso2.jpg" alt="Intercom / digipad" loading="lazy">
+<p>👉 Go to the intercom (right of the entrance).<br>
+🟩 Search for « <strong>KEHRER</strong> » and press the bell.<br>
+⏳ Wait for <strong>“The door is open”</strong>.<br>
+🚪 Push the door to enter.</p>
+
+<hr>
+
+<h2>Step 3: Apartment door</h2>
+<img src="/assets/images/paso3.jpg" alt="Hallway + Nuki smart lock" loading="lazy">
+<p>🚪 Go up to the <strong>1st floor</strong> (lift or stairs).<br>
+➡️ Turn right to the <strong>2nd door on the right</strong>.</p>
+
+<p><strong>📱 Open with the Nuki app</strong></p>
+<ol>
+  <li>Ensure you <strong>accepted the invitation</strong> (travel app inbox or <strong>WhatsApp</strong>).</li>
+  <li>Enable <strong>Bluetooth</strong>.</li>
+  <li>Open <strong>Nuki</strong> and tap <strong>“Open”</strong>.</li>
+  <li>Wait for the beep, then push the door.</li>
+</ol>
+<div class="callout warn"><strong>🟥 Safety:</strong> Nuki auto-locks after 5 minutes and every night at 22:00.</div>
+
+<h2>🔧 Troubleshooting – Nuki</h2>
+<p><strong>❗ App shows “No access”</strong></p>
+<ol>
+  <li>Check the <strong>invitation</strong> is accepted.</li>
+  <li>Make sure <strong>Bluetooth</strong> is on.</li>
+  <li>Stand close to the door, let the app <strong>detect the lock</strong>, then tap <strong>“Open”</strong> again.</li>
+</ol>
+<div class="callout warn">⚠️ The app <strong>doesn’t allow opening before 15:00</strong> and will show “No access” unless early check-in was approved.</div>
+<p>📱 Need help? <a href="https://wa.me/33782178715?text=Hi%2C%20I%20can%E2%80%99t%20open%20the%20Balzac%20lock%20(Invitation%20OK%2C%20Bluetooth%20OK)." target="_blank" rel="noopener">
+  <img src="/assets/images/wa.png" alt="WhatsApp" style="width:60px;height:60px;vertical-align:middle">
+</a></p>
+
+<hr>
+
+<h2>Step 4: Collect keys and card</h2>
+<img src="/assets/images/paso4.jpg" alt="Keys and access card" loading="lazy">
+<p>🔑 The <strong>keys</strong> and <strong>access card</strong> are on the TV console.</p>
+<div class="callout warn"><strong>🟥 IMPORTANT:</strong>
+  <ul>
+    <li>Always keep the <strong>keys</strong> (physical key).</li>
+    <li>The <strong>card</strong> opens both entrance doors.</li>
+    <li>After check-in, <strong>don’t use the intercom</strong> (no remote opening).</li>
+  </ul>
+</div>
+<style>
+  .nuki-inline{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin:25px 0;
+  }
+  .nuki-inline img{
+    width:50%;               /* EXACTEMENT la moitié de la largeur */
+    height:auto;
+    max-width:50%;
+    border-radius:12px;
+    border:1px solid #eee;
+    display:block;
+    object-fit:contain;
+  }
+  .nuki-inline .nuki-text{
+    flex:1;
+    font-size:.95rem;
+    line-height:1.4;
+  }
+  @media(max-width:640px){
+    .nuki-inline{
+      flex-direction:column;
+    }
+    .nuki-inline img{
+      width:100%;
+      max-width:100%;
+    }
+  }
+</style>
+<div class="nuki-inline">
+  <div class="nuki-text">
+    <h3>🔐 From inside the apartment</h3>
+    <p><strong>To unlock the door:</strong><br>
+    Press the central button <strong>once</strong>.</p>
+
+    <p><strong>To lock the door:</strong><br>
+    Press the central button again<br>
+    or wait for the <strong>automatic lock</strong> after 5 minutes.</p>
+  </div>
+
+  <img src="/assets/images/pressnuki.jpg" alt="Nuki button interior" loading="lazy">
+</div>
+
+      
 
     <footer>Fast static site · Balzac</footer>
   </div>
 
+  <!-- Bouton WhatsApp flottant -->
   <a href="https://wa.me/33782178715"
      class="wa-float"
      target="_blank"
      rel="noopener"
-     aria-label="WhatsApp contact">
+     aria-label="Contact WhatsApp">
     <img src="/assets/images/wa.png" alt="WhatsApp">
   </a>
 </body>

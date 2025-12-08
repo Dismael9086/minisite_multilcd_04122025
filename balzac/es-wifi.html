@@ -1,57 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🧳 Consigne bagages – Balzac</title>
+  <title>📶 WI-FI – Balzac</title>
   <link rel="stylesheet" href="/assets/style.css">
-
-  <!-- Style liens -->
-  <style>
-    a {
-      color:#0066ff;
-      font-weight:600;
-      text-decoration:underline;
-    }
-
-    /* Fix footer stable en bas */
-    body {
-      display:flex;
-      flex-direction:column;
-      min-height:100vh;
-      margin:0;
-      padding:0;
-    }
-    .container {
-      flex:1;
-      display:flex;
-      flex-direction:column;
-    }
-    footer {
-      text-align:center;
-      padding:20px 0;
-      color:#888;
-      font-size:0.85rem;
-    }
-  </style>
 </head>
 
 <body>
   <div class="container">
 
 <nav class="topbar">
-  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <a id="home-btn" class="home" href="#" aria-label="Accueil" data-lang="fr">🏠</a>
+  <button id="burger-btn" class="burger" aria-label="Menú" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Inicio" data-lang="es">🏠</a>
 </nav>
 
 <div id="nav-panel" class="nav-panel" aria-hidden="true">
   <div class="nav-section">
-    <div class="nav-title">Pages</div>
-    <a href="/fr-checkin.html">🚪 Instructions d’arrivée</a><a href="/fr-wifi.html">📶 WI-FI</a><a href="/fr-equipements.html">🛠️ Utilisation des équipements</a><a href="/fr-quartier.html">🗺️ Quartier et recommandations</a><a href="/fr-poubelles.html">🗑️ Accès poubelles</a><a href="/fr-regles.html">📜 Règlement intérieur</a><a href="/fr-transport.html">🚕 Transports et parking véhicule</a><a href="/fr-consigne.html" data-active="1">🧳 Consigne bagages</a><a href="/fr-checkout.html">🚪 Check-out</a>
+    <div class="nav-title">Páginas</div>
+    <a href="/es-checkin.html">🚪 Instrucciones de llegada</a><a href="/es-wifi.html" data-active="1">📶 WI-FI</a><a href="/es-equipements.html">🛠️ Uso de los equipos</a><a href="/es-quartier.html">🗺️ Barrio y recomendaciones</a><a href="/es-poubelles.html">🗑️ Acceso a basuras</a><a href="/es-regles.html">📜 Reglamento interior</a><a href="/es-transport.html">🚕 Transporte y estacionamiento</a><a href="/es-consigne.html">🧳 Consigna de equipaje</a><a href="/es-checkout.html">🚪 Check-out</a>
   </div>
   <div class="nav-section">
-    <div class="nav-title">Langues</div>
-    <a href="/fr-consigne.html" data-active="1">FR</a><a href="/en-consigne.html">EN</a><a href="/es-consigne.html">ES</a>
+    <div class="nav-title">Idiomas</div>
+    <a href="/fr-wifi.html">FR</a><a href="/en-wifi.html">EN</a><a href="/es-wifi.html" data-active="1">ES</a>
   </div>
 </div>
 
@@ -133,7 +104,6 @@
   var burger = document.getElementById('burger-btn');
   var panel  = document.getElementById('nav-panel');
 
-  // Ouverture / fermeture du menu hamburger
   if (burger && panel) {
     burger.addEventListener('click', function () {
       var open = panel.classList.toggle('open');
@@ -142,12 +112,11 @@
     });
   }
 
-  // Bouton Home : renvoie toujours au sommaire de la langue
   var home = document.getElementById('home-btn');
   if (home) {
     home.addEventListener('click', function (e) {
       e.preventDefault();
-      var L = home.getAttribute('data-lang') || 'en';
+      var L = home.getAttribute('data-lang') || 'es';
       window.location.href = '/' + L + '.html';
     });
   }
@@ -155,30 +124,28 @@
 </script>
 
 
-    <h1>🧳 Consigne bagages</h1>
+    <h1>📶 WI-FI</h1>
 
     
-
-<h3>📌 Règles générales</h3>
-<ul>
-  <li>[[luggage.internal_storage.fr]]</li>
-</ul>
-
-<hr>
-
-<h3>📍 Si vous devez stocker vos bagages avant 12h00 le jour de votre arrivée ou après 11h00 le jour de votre départ</h3>
-<p>[[luggage.external_services.fr]]</p>
-    
+<section id="wifi" class="wifi">
+  <p><strong>Nombre de la red (SSID):</strong> <span id="ssid">[[wifi.ssid]]</span></p>
+  <p><strong>Contraseña:</strong> <span id="pwd">[[wifi.password]]</span></p>
+  <button
+    style="padding:10px 14px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;"
+    onclick="navigator.clipboard.writeText('[[wifi.password]]')
+      .then(()=>{this.textContent='Copiado ✓'; setTimeout(()=>{this.textContent='Copiar la contraseña'},1500);});">
+    Copiar la contraseña
+  </button>
+</section>
 
     <footer>Fast static site · Balzac</footer>
   </div>
 
-  <!-- Bouton WhatsApp flottant -->
   <a href="https://wa.me/[[contact.whatsapp]]"
      class="wa-float"
      target="_blank"
      rel="noopener"
-     aria-label="Contact WhatsApp">
+     aria-label="Contactar por WhatsApp">
     <img src="/assets/images/wa.png" alt="WhatsApp">
   </a>
 </body>
