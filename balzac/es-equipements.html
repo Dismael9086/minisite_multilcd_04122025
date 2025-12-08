@@ -12,17 +12,17 @@
   <div class="container">
 
 <nav class="topbar">
-  <button id="burger-btn" class="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  <a id="home-btn" class="home" href="#" aria-label="Accueil" data-lang="es">🏠</a>
+  <button id="burger-btn" class="burger" aria-label="Menú" aria-expanded="false">☰</button>
+  <a id="home-btn" class="home" href="#" aria-label="Inicio" data-lang="es">🏠</a>
 </nav>
 
 <div id="nav-panel" class="nav-panel" aria-hidden="true">
   <div class="nav-section">
-    <div class="nav-title">Pages</div>
+    <div class="nav-title">Páginas</div>
     <a href="/es-checkin.html">🚪 Instrucciones de llegada</a><a href="/es-wifi.html">📶 WI-FI</a><a href="/es-equipements.html" data-active="1">🛠️ Uso de los equipos</a><a href="/es-quartier.html">🗺️ Barrio y recomendaciones</a><a href="/es-poubelles.html">🗑️ Acceso a basuras</a><a href="/es-regles.html">📜 Reglamento interior</a><a href="/es-transport.html">🚕 Transporte y estacionamiento</a><a href="/es-consigne.html">🧳 Consigna de equipaje</a><a href="/es-checkout.html">🚪 Check-out</a>
   </div>
   <div class="nav-section">
-    <div class="nav-title">Langues</div>
+    <div class="nav-title">Idiomas</div>
     <a href="/fr-equipements.html">FR</a><a href="/en-equipements.html">EN</a><a href="/es-equipements.html" data-active="1">ES</a>
   </div>
 </div>
@@ -119,7 +119,7 @@
   if (home) {
     home.addEventListener('click', function (e) {
       e.preventDefault();
-      var L = home.getAttribute('data-lang') || 'en';
+      var L = home.getAttribute('data-lang') || 'es';
       window.location.href = '/' + L + '.html';
     });
   }

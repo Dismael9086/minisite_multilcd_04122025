@@ -105,7 +105,6 @@
   var burger = document.getElementById('burger-btn');
   var panel  = document.getElementById('nav-panel');
 
-  // Ouverture / fermeture du menu hamburger
   if (burger && panel) {
     burger.addEventListener('click', function () {
       var open = panel.classList.toggle('open');
@@ -114,7 +113,6 @@
     });
   }
 
-  // Bouton Home : renvoie toujours au sommaire de la langue
   var home = document.getElementById('home-btn');
   if (home) {
     home.addEventListener('click', function (e) {
