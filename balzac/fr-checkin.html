@@ -160,8 +160,8 @@
     
 <h2>Étape 1 : Arrivée à l’immeuble</h2>
 <img src="/assets/images/paso1.jpg" alt="Entrée de l’immeuble" loading="lazy">
-<p>📍 <strong>Adresse :</strong> <a href="https://www.google.com/maps?q=8+rue+Balzac,+75008+Paris" target="_blank" rel="noopener">8 rue Balzac, 75008 Paris</a></p>
-<div class="callout ok"><strong>🟩 Code porte : 4539</strong></div>
+<p>📍 <strong>Adresse :</strong> <a href="https://www.google.com/maps?q=[[checkin.address]]" target="_blank" rel="noopener">[[checkin.address]]</a></p>
+<div class="callout ok"><strong>🟩 Code porte : [[checkin.door_code]]</strong></div>
 
 <hr>
 
@@ -176,7 +176,7 @@
 
 <h2>Étape 3 : Accès à l’appartement</h2>
 <img src="/assets/images/paso3.jpg" alt="Couloir + serrure Nuki" loading="lazy">
-<p>🚪 Montez au <strong>1er étage</strong> par l’ascenseur ou l’escalier.<br>
+<p>🚪 Montez au <strong>[[checkin.floor]]</strong> par l’ascenseur ou l’escalier.<br>
 ➡️ Tournez à droite jusqu’à la <strong>2ᵉ porte à droite</strong>.</p>
 
 <p><strong>📱 Ouverture avec l’app Nuki</strong></p>
@@ -195,8 +195,8 @@
   <li>Vérifiez que le <strong>Bluetooth</strong> est activé.</li>
   <li>Collez-vous à la porte, laissez l’app <strong>détecter la serrure</strong>, puis appuyez de nouveau sur <strong>« Ouvrir »</strong>.</li>
 </ol>
-<div class="callout warn">⚠️ L’application <strong>n’autorise pas l’ouverture avant 15:00</strong> et affichera « No access » sauf accord pour un check-in anticipé.</div>
-<p>📱 Besoin d’aide ? <a href="https://wa.me/33782178715?text=Bonjour%2C%20je%20n%E2%80%99arrive%20pas%20%C3%A0%20ouvrir%20la%20serrure%20Balzac%20(Invitation%20OK%2C%20Bluetooth%20OK)." target="_blank" rel="noopener">
+<div class="callout warn">⚠️ L’application <strong>n’autorise pas l’ouverture avant [[checkin.arrival_window.from]]</strong> et affichera « No access » sauf accord pour un check-in anticipé.</div>
+<p>📱 Besoin d’aide ? <a href="https://wa.me/[[contact.whatsapp]]?text=Bonjour%2C%20je%20n%E2%80%99arrive%20pas%20%C3%A0%20ouvrir%20la%20serrure%20Balzac%20(Invitation%20OK%2C%20Bluetooth%20OK)." target="_blank" rel="noopener">
   <img src="/assets/images/wa.png" alt="WhatsApp" style="width:60px;height:60px;vertical-align:middle">
 </a></p>
 
@@ -211,6 +211,73 @@
     <li>La <strong>carte</strong> ouvre les deux portes d’entrée de l’immeuble.</li>
     <li>Après le check-in, <strong>n’utilisez pas l’interphone</strong> (pas d’ouverture à distance).</li>
   </ul>
+</div>
+
+<hr>
+
+<h2>Étape 1 : Arrivée au bâtiment</h2>
+<img src="/assets/images/etape1.jpg" alt="Entrée du bâtiment" loading="lazy">
+<p>📍 <strong>Adresse :</strong> [[checkin.address]]</p>
+<div class="callout ok"><strong>🟩 Code porte : [[checkin.door_code]]</strong></div>
+
+<hr>
+
+<h2>Étape 2 : Accès par l’interphone / digipad</h2>
+<img src="/assets/images/etape2.jpg" alt="Interphone / digipad" loading="lazy">
+<p>👉 Dirigez-vous vers l'interphone (à droite de l’entrée).<br>
+🟩 Recherchez “KEHRER” puis sur appuyez sur la cloche<br>
+⏳ Attendez le signal sonore <strong>“La porte est ouverte”</strong><br>
+🚪 Poussez la porte pour entrer</p>
+
+<hr>
+
+<h2>Étape 3 : Accès à l’appartement</h2>
+<img src="/assets/images/etape3.jpg" alt="Couloir + serrure Nuki" loading="lazy">
+
+<p>🚪 Montez au <strong>[[checkin.floor]]</strong> par l’ascenseur ou les escaliers.<br>
+➡️ Prenez à droite jusqu’à la <strong>2ᵉ porte sur la droite</strong>.</p>
+
+<p><strong>📱 Ouverture de la porte de l’appartement via l’application Nuki sur votre téléphone</strong></p>
+<ol>
+  <li>Assurez-vous d’avoir <strong>validé votre accès via le code d’invitation</strong> envoyé sur la <strong>messagerie de votre application de voyage</strong> ou sur <strong>WhatsApp</strong></li>
+  <li>Activez le <strong>Bluetooth</strong></li>
+  <li>Ouvrez l’app <strong>Nuki</strong></li>
+  <li>Cliquez sur <strong>“Ouvrir la porte”</strong></li>
+  <li>Attendez le signal sonore</li>
+  <li>Poussez la porte</li>
+</ol>
+
+<div class="callout warn"><strong>🟥 Pour votre sécurité :</strong> la serrure intelligente Nuki se remettra automatiquement en position “verrouillée” après 5 minutes et tous les soirs à 22h00.</div>
+
+<hr>
+
+<h2>🔧 Dépannage – Serrure Nuki</h2>
+<p><strong>❗ La porte ne s’ouvre pas et l’application affiche “No access”</strong></p>
+<ol>
+  <li>Vérifiez que vous avez bien <strong>validé l’invitation</strong> reçue sur la <strong>messagerie de votre application de voyage</strong> ou sur <strong>WhatsApp</strong>.</li>
+  <li>Vérifiez que le <strong>Bluetooth</strong> de votre téléphone est activé.</li>
+  <li>Approchez-vous de la porte, attendez que l’application <strong>détecte la serrure</strong>, puis réessayez d’appuyer sur <strong>“Déverrouiller”</strong>.</li>
+</ol>
+<div class="callout warn">⚠️ L’application ne permet pas d’ouvrir avant <strong>[[checkin.arrival_window.from]]</strong> et affichera “No access” sauf accord de notre part pour un check-in anticipé.</div>
+<p>📱 Si cela ne fonctionne toujours pas, merci de nous contacter par <strong>WhatsApp</strong> : <a href="https://wa.me/[[contact.whatsapp]]?text=Bonjour%2C%20je%20n'arrive%20pas%20%C3%A0%20ouvrir%20la%20serrure%20pour%20l'appartement%20Balzac%2C%20j'ai%20valid%C3%A9%20mon%20lien%20d'invitation%2C%20j'ai%20activ%C3%A9%20mon%20Bluetooth%20et%20j'ai%20attendu%20que%20l'application%20d%C3%A9tecte%20la%20serrure%20et%20cela%20ne%20fonctionne%20pas%2C%20merci%20de%20m'aider."
+   target="_blank"
+   rel="noopener noreferrer">
+   <img src="/assets/images/wa.png" alt="WhatsApp" style="width:60px;height:60px;">
+</a>
+.</p>
+
+<hr>
+
+<h2>Étape 4 : Récupération des clés & badge</h2>
+<img src="/assets/images/etape4.jpg" alt="Clés et badge" loading="lazy">
+<p>🔑 Les <strong>clés</strong> et le <strong>badge d’accès</strong> sont sur le meuble TV.</p>
+
+<div class="callout warn"><strong>🟥 ATTENTION :</strong>
+<ul>
+  <li>Gardez toujours les <strong>clés avec vous</strong> en quittant l’appartement. Vous pourrez utiliser à votre guise, la <strong>clé physique</strong> ou l’application <strong>Nuki</strong> pour ouvrir la porte de l’appartement.</li>
+  <li>Le <strong>badge</strong> ouvre les deux portes d’entrée du bâtiment.</li>
+  <li>Après le check-in, <strong>n’utilisez plus l’interphone</strong> (nous ne pouvons pas ouvrir à distance).</li>
+</ul>
 </div>
 <!-- Bloc instructions Nuki intérieur -->
 <style>
@@ -263,7 +330,7 @@
   </div>
 
   <!-- Bouton WhatsApp flottant -->
-  <a href="https://wa.me/33782178715"
+  <a href="https://wa.me/[[contact.whatsapp]]"
      class="wa-float"
      target="_blank"
      rel="noopener"
