@@ -157,61 +157,24 @@
 
     <h1>🚪 Instructions d’arrivée</h1>
 
-    
-<h2>Étape 1 : Arrivée à l’immeuble</h2>
-<img src="/assets/images/paso1.jpg" alt="Entrée de l’immeuble" loading="lazy">
-<p>📍 <strong>Adresse :</strong> <a href="https://www.google.com/maps?q=[[checkin.address]]" target="_blank" rel="noopener">[[checkin.address]]</a></p>
-<div class="callout ok"><strong>🟩 Code porte : [[checkin.door_code]]</strong></div>
+    <section class="card">
+      <h2>Adresse et accès</h2>
+      <p><strong>Adresse complète :</strong> [[checkin.address]]</p>
+      <p><strong>Étage :</strong> [[checkin.floor]]</p>
+      <p><strong>Code porte / digicode :</strong> [[checkin.door_code]]</p>
+    </section>
 
-<hr>
+    <section class="card">
+      <h2>Horaires d’arrivée</h2>
+      <p><strong>Arrivée standard :</strong> de [[checkin.arrival_window.from]] à [[checkin.arrival_window.to]]</p>
+      <p><strong>Arrivée tardive :</strong> [[checkin.late_checkin_policy.fr]]</p>
+    </section>
 
-<h2>Étape 2 : Accès par interphone / digicode</h2>
-<img src="/assets/images/paso2.jpg" alt="Interphone / digipad" loading="lazy">
-<p>👉 Dirigez-vous vers l’interphone (à droite de l’entrée).<br>
-🟩 Cherchez le nom « <strong>KEHRER</strong> » et appuyez sur la cloche.<br>
-⏳ Attendez le message sonore <strong>« La porte est ouverte »</strong>.<br>
-🚪 Poussez la porte pour entrer.</p>
-
-<hr>
-
-<h2>Étape 3 : Accès à l’appartement</h2>
-<img src="/assets/images/paso3.jpg" alt="Couloir + serrure Nuki" loading="lazy">
-<p>🚪 Montez au <strong>[[checkin.floor]]</strong> par l’ascenseur ou l’escalier.<br>
-➡️ Tournez à droite jusqu’à la <strong>2ᵉ porte à droite</strong>.</p>
-
-<p><strong>📱 Ouverture avec l’app Nuki</strong></p>
-<ol>
-  <li>Assurez-vous d’avoir <strong>validé l’invitation</strong> reçue (messagerie de votre app de voyage ou <strong>WhatsApp</strong>).</li>
-  <li>Activez le <strong>Bluetooth</strong>.</li>
-  <li>Ouvrez l’app <strong>Nuki</strong> et appuyez sur <strong>« Ouvrir »</strong>.</li>
-  <li>Attendez le signal sonore puis poussez la porte.</li>
-</ol>
-<div class="callout warn"><strong>🟥 Sécurité :</strong> la serrure Nuki se verrouille automatiquement après 5 minutes et chaque nuit à 22:00.</div>
-
-<h2>🔧 Dépannage – Nuki</h2>
-<p><strong>❗ L’app affiche « No access »</strong></p>
-<ol>
-  <li>Vérifiez que l’<strong>invitation</strong> est bien validée.</li>
-  <li>Vérifiez que le <strong>Bluetooth</strong> est activé.</li>
-  <li>Collez-vous à la porte, laissez l’app <strong>détecter la serrure</strong>, puis appuyez de nouveau sur <strong>« Ouvrir »</strong>.</li>
-</ol>
-<div class="callout warn">⚠️ L’application <strong>n’autorise pas l’ouverture avant [[checkin.arrival_window.from]]</strong> et affichera « No access » sauf accord pour un check-in anticipé.</div>
-<p>📱 Besoin d’aide ? <a href="https://wa.me/[[contact.whatsapp]]?text=Bonjour%2C%20je%20n%E2%80%99arrive%20pas%20%C3%A0%20ouvrir%20la%20serrure%20Balzac%20(Invitation%20OK%2C%20Bluetooth%20OK)." target="_blank" rel="noopener">
-  <img src="/assets/images/wa.png" alt="WhatsApp" style="width:60px;height:60px;vertical-align:middle">
-</a></p>
-
-<hr>
-
-<h2>Étape 4 : Récupérer les clés et la carte</h2>
-<img src="/assets/images/paso4.jpg" alt="Clés et carte d’accès" loading="lazy">
-<p>🔑 Les <strong>clés</strong> et la <strong>carte d’accès</strong> sont sur le meuble TV.</p>
-<div class="callout warn"><strong>🟥 IMPORTANT :</strong>
-  <ul>
-    <li>Gardez toujours les <strong>clés avec vous</strong> en sortant (clé physique).</li>
-    <li>La <strong>carte</strong> ouvre les deux portes d’entrée de l’immeuble.</li>
-    <li>Après le check-in, <strong>n’utilisez pas l’interphone</strong> (pas d’ouverture à distance).</li>
-  </ul>
-</div>
+    <section class="card">
+      <h2>Parking</h2>
+      <p><strong>Place de parking :</strong> [[checkin.parking_spot]]</p>
+      <p>[[checkin.parking_instructions.fr]]</p>
+    </section>
 
 <hr>
 
